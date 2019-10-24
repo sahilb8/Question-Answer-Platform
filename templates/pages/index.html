@@ -1,0 +1,107 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load static %}
+
+  <!-- details card section starts from here -->
+  <section class="details-card">
+        <div class="container">
+          <h1>Categories</h1>
+          <p>Dive deep in knowledge of the topics</p>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card-content">
+                <div class="card-img">
+                  <img src="{% static 'img/algorithm.jpeg' %}" alt="algorithm-img">
+    
+                </div>
+                <div class="card-desc">
+                  <h3>Algorithms</h3>
+                  <p>An algorithm is a self-contained sequence of actions to be performed. Algorithms can perform calculation, data processing and automated reasoning tasks.An algorithm is an effective method that can be expressed within a finite amount
+                    of space and time and in a well-defined formal language for calculating a function.
+                    There are various algorithm design paradigm like Brute-Force approach, Divide and conquer approach, Linear programming, Dynamic programming, The greedy method and so on...</p>
+                  <a href="#" class="btn-card">Read</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-content">
+                <div class="card-img">
+                  <img src="{% static 'img/comparch.jpg' %}" alt="computer architect img">
+    
+                </div>
+                <div class="card-desc">
+                  <h3>Architecture</h3>
+                  <p>In computer engineering, computer architecture is a set of rules and methods that describe the functionality, organization, and implementation of computer systems. Some definitions of architecture define it as describing the
+                    capabilities and programming model of a computer but not a particular implementation. In other definitions computer architecture involves instruction set architecture design, microarchitecture design, logic design, and implementation.
+                    The purpose of computer architecture is to design a computer that maximizes performance while keeping power consumption in check, costs low relative to the amount of expected performance, and is also very reliable.</p>
+                  <a href="#" class="btn-card">Read</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-content">
+                <div class="card-img">
+                  <img src="{% static 'img/theoryofcomp.jpg' %}" alt="theory of computation img">
+                </div>
+                <div class="card-desc">
+                  <h3>Theory Of Computation</h3>
+                  <p>In theoretical computer science and mathematics, the theory of computation is the branch that deals with how efficiently problems can be solved on a model of computation, using an algorithm. The field is divided into three major
+                    branches: automata theory and language, computability theory, and computational complexity theory, which are linked by the question: "What are the fundamental capabilities and limitations of computers?".
+                    In order to perform a rigorous study of computation, computer scientists work with a mathematical abstraction of computers called a model of computation. There are several models in use, but the most commonly examined is the Turing
+                    machine.</p>
+                  <a href="#" class="btn-card">Read</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card-content">
+                <div class="card-img">
+                  <img src="{% static 'img/database.jpeg' %}" alt="database img">
+                </div>
+                <div class="card-desc">
+                  <h3>Database Management</h3>
+                  <p>A Database Management System (DBMS) is a computer program (or more typically, a suite of them) designed to manage a database, a large set of structured data, and run operations on the data requested by numerous users. Typical
+                    examples of DBMS use include accounting, human resources and customer support systems.
+                    Originally found only in large companies with the computer hardware needed to support large data sets, DBMSs have more recently emerged as a fairly standard part of any company back office.</p>
+                  <a href="#" class="btn-card">Read</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-content">
+                <div class="card-img">
+                  <img src="{% static 'img/probability.jpg' %}" alt="probability img">
+                </div>
+                <div class="card-desc">
+                  <h3>Probability & Queuing</h3>
+                  <p>Probability is the measure of the likelihood that an event will occur. Probability is quantified as a number between 0 and 1 (where 0 indicates impossibility and 1 indicates certainty). The higher the probability of an event, the
+                    more certain that the event will occur.
+                    In queueing theory, a model is constructed so that queue lengths and waiting time can be predicted. Queueing theory is generally considered a branch of operations
+                    research because the results are often used when making business decisions about the resources needed to provide a service.</p>
+                  <a href="#" class="btn-card">Read</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card-content">
+                <div class="card-img">
+                  <img src="{% static 'img/softwareengg.jpeg' %}" alt="software engg img">
+                </div>
+                <div class="card-desc">
+                  <h3>Software Engineering</h3>
+                  <p>Software engineering (SWE) is the application of engineering to the development of software in a systematic method. Typically, Software engineering is Research, design, develop, and test operating systems-level software, compilers,
+                    and network distribution software for medical, industrial, military, communications, aerospace, business, scientific, and general computing applications, and is an an engineering discipline that is concerned with all aspects of
+                    software production.It is also considered a part of overall systems engineering.</p>
+                  <a href="#" class="btn-card">Read</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+    
+    
+{% endblock %}

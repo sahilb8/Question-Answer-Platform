@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section class="our-webcoderskull padding-lg">
+  <div class="container">
+    <div class="row heading heading-icon">
+      <h2>Our Team</h2>
+    </div>
+    <ul class="row">
+      <li class="col-md-6">
+        <div class="cnt-block equal-hight" style="height: 349px;">
+          <figure><img src="http://www.webcoderskull.com/img/team4.png" class="img-responsive" alt=""></figure>
+          <h3><a href="http://www.webcoderskull.com/">Sahil Bhanastarkar</a></h3>
+          <p>Co-Founder</p>
+
+        </div>
+      </li>
+      <li class="col-md-6">
+        <div class="cnt-block equal-hight" style="height: 349px;">
+          <figure><img src="http://www.webcoderskull.com/img/team1.png" class="img-responsive" alt=""></figure>
+          <h3><a href="#">Rishav Shekhar</a></h3>
+          <p>Co-Founder</p>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+{% endblock %}
