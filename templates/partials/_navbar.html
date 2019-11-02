@@ -15,19 +15,45 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     
               <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'index' %}">Home</a>
+                  <a class="nav-link" href="{% url 'listings' %}">Q/A</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'about' %}">About</a>
+                <li
+                {% if 'dashboard' in request.path %}
+                  class="nav-item active mr-3"
+                {% else %}
+                  class="nav-item mr-3"
+                {% endif %}
+                >
+                  <a class="nav-link" href="{% url 'dashboard' %}">
+                     Welcome {{ user.username }} (Dashboard)</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#footer">Register</a>
+                <li class="nav-item mr-3">
+                  <a href="javascript:{document.getElementById('logout').submit()}"
+                  class="nav-link">
+                  <i class="i.fas.fa-sign-out-alt"></i> Logout
+                </a>
+                <form action="{% url 'logout' %}" method="POSt" id="logout">
+                  {% csrf_token %}
+                  <input type="hidden">
+                </form>
+
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#pricing">Login</a>
-                </li>
-    
+                {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                  </li>
+                {% endif %}
               </ul>
     
             </div>

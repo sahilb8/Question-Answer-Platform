@@ -1,13 +1,43 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
 
 {% load static %}
 
+{% block title %}| Welcome{% endblock %}
+{% block content %}
+<!-- Alerts -->
+{% include 'partials/_alerts.html' %}
+
   <!-- details card section starts from here -->
-  <section class="details-card">
-        <div class="container">
-          <h1>Categories</h1>
-          <p>Dive deep in knowledge of the topics</p>
-          <div class="row">
+
+  <section id="categories" class="py-4">
+    <div class="container">
+      <div class="row">
+        {% if categories %}
+          {% for category in categories %}
+          <div class="col-md-4 col-lg-4 mb-4">
+            <div class="card-img">
+              <img src="{{ category.photo.url }}}" alt="image">
+
+            </div>
+                <div class="card-body">
+                  <div class="text-center">
+                    <h3>{{ category.title }}</h3>
+                  <p>{{ category.description }}</p>
+                  <a href="{% url 'login' %}" class="btn-card">Read</a>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-md-12">
+            <p>No Listings Available</p>
+          </div>
+        {% endif %}
+    
+          <!-- <div class="row">
             <div class="col-md-4">
               <div class="card-content">
                 <div class="card-img">
@@ -98,7 +128,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
     

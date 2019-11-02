@@ -1,1 +1,67 @@
-<h1>Listings</h1>
+{% extends 'base.html' %}
+
+{% block title %} | Q/A {% endblock %}
+
+{% block content %}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<form action="{% url 'search' %}">
+<div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label class="sr-only">Categories</label>
+          <select name="category_choices" class="form-control">
+            <option selected="true" disabled="disabled">Categories</option>
+            {% for key,value in categorychoices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+          </select>
+        </div>
+    </div>
+    <button class="btn btn-secondary btn-block mt-4" type="submit">Submit</button>
+</form>
+
+<div class="container">
+<div class="col-md-12">
+    {% if listings %}
+    {% for listing in listings %}
+  <hr>
+    <h2>{{ listing.question_title }}</h2>
+    <p style="font-size:20px;">{{ listing.answer_text }}</p>
+    <span class="badge pull-left">{{ listing.list_date }}</span>
+    <div class="pull-right"><span class="label label-default">{{ listing.category }}</span>
+  <hr>
+</div>
+</div>
+{% endfor %}
+{% else %}
+          <div class="col-md-12">
+            <p>No Q/A Available</p>
+          </div>
+{% endif %}
+
+<div class="container">
+    <div class="col-md-12">
+        {% if questions %}
+        {% for question in questions %}
+      <hr>
+        <h2>{{ question.question_title }}</h2>
+        <p style="font-size:20px;">{{ question.answer }}</p>
+        <span class="badge pull-left">{{ question.question_date }}</span>
+        <div class="pull-right"><span class="label label-default">{{ question.category }}</span>
+      <hr>
+    </div>
+    </div>
+{% endfor %}
+
+{% else %}
+          <div class="col-md-12">
+            <p>No Q/A Available</p>
+          </div>
+{% endif %}
+
+
+{% endblock %}
