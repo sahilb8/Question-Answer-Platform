@@ -151,3 +151,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'rdbmsproject1@gmail.com'
 EMAIL_HOST_PASSWORD='rishav@bihar1'
 EMAIL_USE_TLS=True
+
+#MEDIA Folder Settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

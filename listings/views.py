@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from listings.models import Listing
-from listings.choices import categorychoices
 from questions.models import Question
 
 
@@ -11,7 +10,6 @@ def index(request):
     roger = {
         'questions': questions,
         'listings': listings,
-        'categorychoices': categorychoices
     }
     return render(request, 'listings/listings.html', roger)
 
@@ -23,12 +21,12 @@ def search(request):
     queryset_list = Listing.objects.order_by('-list_date')
     
 
-    # if 'categorychoices' in request.GET:
-    #     categorychoices = request.GET['categorychoices']
-    #     if categorychoices:
-    #         queryset_list = queryset_list.filter(categorychoices__iexact=categorychoices)
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+            queryset_list = queryset_list.filter(answer_text__icontains=keywords)
+
     context = {
-        # 'categorychoices': categorychoices,
         'listings': queryset_list,
         
     }

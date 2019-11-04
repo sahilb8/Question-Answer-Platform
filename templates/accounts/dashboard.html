@@ -63,15 +63,6 @@
     <hr>
   
   <p class="lead" style="color:red;">Any Question?</p>
-  <!-- <div class="modal fade" id="inquiryModal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="inquiryModalLabel">Make An Inquiry</h5>
-          <button type="button" class="close" data-dismiss="modal">
-            <span>&times;</span>
-          </button>
-        </div>-->
         <div class="modal-body">
           <form action="{% url 'question' %}" method="POST">
             {% csrf_token %}
@@ -100,7 +91,4 @@
             <input type="submit" value="Send" class="btn btn-block btn-secondary">
           </form>
         </div>
-      <!-- </div>
-    </div>
-  </div> -->
   {% endblock %}

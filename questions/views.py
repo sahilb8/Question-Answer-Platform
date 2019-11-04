@@ -20,7 +20,7 @@ def question(request):
 
     #send mail
     send_mail(
-        'question answered',
+        'New Question',
         name +' has asked: '+ question_title + '. Sign into admin panel for more info',
         'rdbmsproject1@gmail.com',
         [email_id],
