@@ -13,7 +13,7 @@ def question(request):
         # category_id = request.POST['category_id']
 
     question = Question(question_title=question_title ,name=name, phone=phone,
-    user_id=user_id,category_id=9,email_id=email_id)
+    user_id=user_id,category_id=7,email_id=email_id)
     
 
     question.save()
